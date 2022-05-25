@@ -1,0 +1,16 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: api-pod
+  labels:
+    app: backend
+    team: developer
+
+spec:
+  containers:
+  - name: mernstackapi
+    image: dmnlfrkn/myapp:api
+    ports:
+      - containerPort: 5000
