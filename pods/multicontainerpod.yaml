@@ -11,10 +11,10 @@ metadata:
 spec:
   containers:
   - name: mernstackclient
-    image: dmnlfrkn/myapp:client
+    image: dmnlfrkn/myapp:doublecont-client
     ports:
       - containerPort: 3000
   - name: mernstackapi
-    image: dmnlfrkn/myapp:api
+    image: dmnlfrkn/myapp:doublecont-api
     ports:
       - containerPort: 5000
