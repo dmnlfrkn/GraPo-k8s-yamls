@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: dmnlfrkn/myapp:client
+        image: docker.io/dmnlfrkn/myapp:client
         ports:
         - containerPort: 3000
 ---
@@ -38,6 +38,6 @@ spec:
     spec:
       containers:
       - name: backend
-        image: dmnlfrkn/myapp:api
+        image: docker.io/dmnlfrkn/myapp:api
         ports:
         - containerPort: 5000
