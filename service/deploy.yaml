@@ -19,6 +19,7 @@ spec:
         image: docker.io/dmnlfrkn/myapp:client
         ports:
         - containerPort: 3000
+      imagePullPolicy: Always
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,3 +42,4 @@ spec:
         image: docker.io/dmnlfrkn/myapp:api
         ports:
         - containerPort: 5000
+      imagePullPolicy: Always
