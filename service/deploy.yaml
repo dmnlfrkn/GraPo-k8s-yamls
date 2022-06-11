@@ -1,9 +1,10 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
   labels:
     team: development
+  name: backend
 spec:
   replicas: 1
   selector:
@@ -15,8 +16,8 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: docker.io/dmnlfrkn/myapp:api
+      - image: docker.io/dmnlfrkn/myapp:api
+        name: backend
         ports:
         - containerPort: 5000
       imagePullPolicy: Always
@@ -24,9 +25,9 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
   labels:
     team: development
+  name: frontend
 spec:
   replicas: 1
   selector:
@@ -38,8 +39,8 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: docker.io/dmnlfrkn/myapp:client
+      - image: docker.io/dmnlfrkn/myapp:client
+        name: frontend
         ports:
         - containerPort: 3000
       imagePullPolicy: Always
