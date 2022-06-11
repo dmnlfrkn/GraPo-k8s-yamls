@@ -1,29 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
-  labels:
-    team: development
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: frontend
-  template:
-    metadata:
-      labels:
-        app: frontend
-    spec:
-      containers:
-      - name: frontend
-        image: docker.io/dmnlfrkn/myapp:client
-        ports:
-        - containerPort: 3000
-      imagePullPolicy: Always
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: backend
   labels:
     team: development
@@ -42,4 +19,27 @@ spec:
         image: docker.io/dmnlfrkn/myapp:api
         ports:
         - containerPort: 5000
+      imagePullPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    team: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: docker.io/dmnlfrkn/myapp:client
+        ports:
+        - containerPort: 3000
       imagePullPolicy: Always
